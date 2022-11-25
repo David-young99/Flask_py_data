@@ -1,0 +1,6 @@
+En la función que retorna los datos html, en el return solo pasan textos planos, para poder pasar más que eso
+necesitamos pasar un elemento "template", para ello es necesario crear una carpeta que se encuentre en la misma
+ubicación que nuestra app de python, no puede estar afuera, debe de estar en la misma carpeta que nuestro .py 
+
+Lo que ahí se encuentre le permitirá a Flask detectar los archivos que contienen la info html
+
