@@ -4,3 +4,37 @@ ubicación que nuestra app de python, no puede estar afuera, debe de estar en la
 
 Lo que ahí se encuentre le permitirá a Flask detectar los archivos que contienen la info html
 
+* Las herencias entre archivos html nos permiten reutilizar plantillas tomando el contenido
+de una y pasándolo a otra, cuando creamos los bloques en la plantilla padre y creamos
+un bloque con el mismo nombre en otra plantilla html, ahí se crea la conexión, una vez
+yo ponga el código en cada uno de esos bloques en la plantilla hija, yo no tengo que poner
+cuál es el título ni nada de la estructura html, por la ubicación que tiene el bloque
+en la plantilla padre, ya sabe donde colocar ese código. En este caso la hija recibe los
+datos del código python y se las manda a la padre aunque la que se esté mostrando sae 
+la hija, es solo para las ubicaciones.
+
+* carpeta static: se crea en la carpeta de la app, adentro se ponen elementos que no
+cambian, como archivos css, js, imagenes o videos a utilizar, entre otros. 
+Para hacer la conexión en la etiqueta link y atributo href se ponen las llaves de 
+jinja2 y se le dice que lo que va a pasar es un url_for y dentro de eso se ponen dos 
+atributos, a) en comillas simples 'static' y b) en comillas simples 'ubicación del
+ archivo css'. Si se aplica esto a la plantilla padre, se aplica el css a todas
+ las plantillas. Aplica igual para el JS.
+
+ * Query string
+ Este nos sirve para escribir param en la url de esta
+forma "...:5000/contacto/query_string?param1=David" y se guarde david como parametro
+y yo ya lo puedo usar. Una observación es que una misma plantilla puede ser alimentada por
+varias funciones, si ambas se les pasa el arg data, pero en una es un diccionario y en
+otra es solo un valor, pues va a detectar el valor solo porque el otro no se le especifico
+que parte del diccionario.
+
+* Cuando se hace la app abajo y cuando se hace la app arriba?
+Osea, cuando el app lleva @ y cuando el app va solo dentro del if final?, simple
+cuando el app use la función en sus argumentos va abajo, porque no puede usar un @app 
+sin definir la función todavía
+
+* API REST
+Para crearla vamos a neceistar instalar una nueva librería en el entorno,
+se llama flask-mysqldb
+

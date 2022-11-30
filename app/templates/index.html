@@ -1,14 +1,21 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
-</head>
-<body>
-    <h1>{{ data }}</h1>
+{% extends "./layout.html" %}
 
-    
-</body>
-</html>
+{% block title %}{{ data.Titulo }}{% endblock %}
+
+
+{% block body %}
+
+<h1>{{ data.Nombre }}</h1>
+
+    {% if data.lista_colores > 0 %}
+    <ul>
+        {% for c in data.colores %}
+        <li>{{ c }}</li>
+        {% endfor %}
+
+    </ul>
+    {% else %}
+    <h2>No existen colores registrados...</h2>
+    {% endif %}
+
+{% endblock %}
